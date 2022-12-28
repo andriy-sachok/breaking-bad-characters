@@ -13,16 +13,17 @@ const Character = (props) => {
       sx={{
         flex: `0 0 calc(16.66% - 20px)`,
         margin: `2rem`,
+        borderRadius: `1rem`,
       }}
     >
       <CardMedia
         component="img"
         src={photo}
         alt={name}
-        sx={{ width: "350px" }}
+        sx={{ width: "350px", height: `260px` }}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="h5" textAlign={`center`}>
           {name}
         </Typography>
       </CardContent>
