@@ -14,6 +14,7 @@ const Character = (props) => {
         flex: `0 0 calc(16.66% - 20px)`,
         margin: `2rem`,
         borderRadius: `1rem`,
+        backgroundColor: `whitesmoke`,
       }}
     >
       <CardMedia
