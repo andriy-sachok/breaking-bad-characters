@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 const Character = (props) => {
   const photo = props.photo;
   const name = props.name;
+
   return (
     <Card
       sx={{
