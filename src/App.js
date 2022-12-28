@@ -10,13 +10,7 @@ function App() {
     <Container
       maxWidth="false"
       disableGutters
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        backgroundColor: "lightblue",
-      }}
+      sx={{ backgroundColor: `lightblue` }}
     >
       <Header />
       <Gallery />
