@@ -11,11 +11,10 @@ function App() {
       maxWidth="false"
       disableGutters
       sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        backgroundColor: "lightblue",
+        backgroundImage: `url(https://img.freepik.com/free-photo/green-smoke-spread-black-background_23-2148092735.jpg?w=2000)`,
+        backgroundRepeat: `no-repeat`,
+        // backgroundAttachment: `fixed`,
+        backgroundSize: `100% 100%`,
       }}
     >
       <Header />

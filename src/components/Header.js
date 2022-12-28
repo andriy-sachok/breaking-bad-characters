@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 
 const Header = () => {
   return (
-    <AppBar position="absolute" sx={{ top: "0" }}>
+    <AppBar position="static" sx={{ backgroundColor: `grey` }}>
       <Typography variant="h4" textAlign={"center"} margin="0.5rem">
         Breaking Bad characters
       </Typography>
