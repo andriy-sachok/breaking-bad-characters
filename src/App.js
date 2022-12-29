@@ -1,24 +1,37 @@
 import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import { Container } from "@mui/material";
 
+import { AnimatePresence } from "framer-motion";
+import AnimatedComponent from "./components/animations/AnimatedComponent";
+
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
+import CharacterInfo from "./components/character/CharacterInfo";
+import DummyComponent from "./components/animations/DummyComponent";
 
 function App() {
+  const location = useLocation();
+  console.log(location);
   return (
-    <Container
-      maxWidth="false"
-      disableGutters
-      sx={{
-        backgroundImage: `url(https://img.freepik.com/free-photo/green-smoke-spread-black-background_23-2148092735.jpg?w=2000)`,
-        backgroundRepeat: `no-repeat`,
-        // backgroundAttachment: `fixed`,
-        backgroundSize: `100% 100%`,
-      }}
-    >
+    <Container maxWidth="false" disableGutters>
       <Header />
-      <Gallery />
+      <AnimatePresence mode={`wait`}>
+        <Routes key={location.pathname} location={location}>
+          <Route path={"/"} exact element={<Gallery />} />
+          <Route
+            path={"/:id"}
+            element={
+              <AnimatedComponent>
+                <CharacterInfo />
+              </AnimatedComponent>
+            }
+          />
+          <Route path="dummy" element={<DummyComponent />} />
+        </Routes>
+      </AnimatePresence>
+      {/* <Gallery /> */}
     </Container>
   );
 }

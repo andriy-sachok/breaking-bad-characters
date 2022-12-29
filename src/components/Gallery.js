@@ -1,53 +1,63 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
-import Character from "./Character";
+import CharacterCard from "./character/CharacterCard";
 
 import { characters } from "../constants";
 
+const gallery = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const galleyrItem = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+  },
+};
+
 const Gallery = () => {
   const charactersList = characters.map((hero) => ({
+    id: hero.id,
     photoURL: hero.photoURL,
     name: hero.name,
     fullName: hero.fullName,
     description: hero.description,
   }));
 
-  const result = charactersList.map((hero) => {
-    return (
-      <Grid item md={5} key={hero.fullName}>
-        <Character
-          photo={hero.photoURL}
-          name={hero.name}
-          fullName={hero.fullName}
-          description={hero.description}
-        />
-      </Grid>
-    );
-  });
-
   return (
     <>
-      <Box
-        sx={{
+      <motion.div
+        variants={gallery}
+        initial="hidden"
+        animate="visible"
+        style={{
           display: `flex`,
           flexWrap: `wrap`,
           justifyContent: `center`,
         }}
       >
-        {result}
-      </Box>
-      {/* <Box sx={{ flexGrow: 1 }}>
-        <Grid
-          container
-          spacing={10}
-          columns={15}
-          sx={{ padding: `5rem` }}
-          wrap={`wrap`}
-        ></Grid>
-      </Box> */}
+        {charactersList.map((hero) => (
+          <motion.div variants={galleyrItem} key={hero.fullName}>
+            <Grid item md={5}>
+              <CharacterCard
+                id={hero.id}
+                photo={hero.photoURL}
+                name={hero.name}
+                fullName={hero.fullName}
+                description={hero.description}
+              ></CharacterCard>
+            </Grid>
+          </motion.div>
+        ))}
+      </motion.div>
     </>
   );
 };
