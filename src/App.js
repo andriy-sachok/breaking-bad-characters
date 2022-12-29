@@ -1,9 +1,11 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 
 import { Container } from "@mui/material";
 
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
+import DummyComponent from "./components/animations/DummyComponent";
 
 function App() {
   return (
@@ -18,7 +20,11 @@ function App() {
       }}
     >
       <Header />
-      <Gallery />
+      <Routes>
+        <Route path="/" element={<Gallery />} />
+        <Route path="/dummy" element={<DummyComponent />} />
+      </Routes>
+      {/* <Gallery /> */}
     </Container>
   );
 }
