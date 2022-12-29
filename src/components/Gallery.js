@@ -11,7 +11,6 @@ const gallery = {
   hidden: {},
   visible: {
     transition: {
-      // delayChildren: 0.3,
       staggerChildren: 0.2,
     },
   },
