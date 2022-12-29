@@ -26,6 +26,7 @@ const galleyrItem = {
 
 const Gallery = () => {
   const charactersList = characters.map((hero) => ({
+    id: hero.id,
     photoURL: hero.photoURL,
     name: hero.name,
     fullName: hero.fullName,
@@ -48,6 +49,7 @@ const Gallery = () => {
           <motion.div variants={galleyrItem} key={hero.fullName}>
             <Grid item md={5}>
               <Character
+                id={hero.id}
                 photo={hero.photoURL}
                 name={hero.name}
                 fullName={hero.fullName}

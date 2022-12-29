@@ -1,13 +1,16 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import { Container } from "@mui/material";
+
+import { AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
 import DummyComponent from "./components/animations/DummyComponent";
 
 function App() {
+  const location = useLocation();
   return (
     <Container
       maxWidth="false"
@@ -20,10 +23,12 @@ function App() {
       }}
     >
       <Header />
-      <Routes>
-        <Route path="/" element={<Gallery />} />
-        <Route path="/dummy" element={<DummyComponent />} />
-      </Routes>
+      <AnimatePresence mode={`wait`}>
+        <Routes key={location.pathname} location={location}>
+          <Route path={"/*"} element={<Gallery />} />
+          <Route path="/dummy" element={<DummyComponent />} />
+        </Routes>
+      </AnimatePresence>
       {/* <Gallery /> */}
     </Container>
   );
