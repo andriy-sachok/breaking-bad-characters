@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-const Character = (props) => {
+const CharacterCard = (props) => {
   const navigate = useNavigate();
   const id = props.id;
   const photo = props.photo;
@@ -39,4 +39,4 @@ const Character = (props) => {
   );
 };
 
-export default Character;
+export default CharacterCard;
