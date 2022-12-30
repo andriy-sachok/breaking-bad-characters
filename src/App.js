@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { Box, Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material";
-import { grey, blueGrey, cyan } from "@mui/material/colors";
+import { grey, blueGrey } from "@mui/material/colors";
 
 import { AnimatePresence } from "framer-motion";
 import AnimatedComponent from "./components/animations/AnimatedComponent";

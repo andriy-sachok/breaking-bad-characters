@@ -49,7 +49,7 @@ const CharacterCard = ({ id, photo, name }) => {
             sx={{ width: "350px", height: `260px` }}
           />
           <CardContent>
-            <Typography variant="h5" textAlign={`center`}>
+            <Typography variant="h5" textAlign={`center`} fontWeight={`bold`}>
               {name}
             </Typography>
           </CardContent>
