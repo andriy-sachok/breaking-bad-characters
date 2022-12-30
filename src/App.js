@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
 import { AnimatePresence } from "framer-motion";
 import AnimatedComponent from "./components/animations/AnimatedComponent";
@@ -16,20 +16,27 @@ function App() {
   return (
     <Container maxWidth="false" disableGutters>
       <Header />
-      <AnimatePresence mode={`wait`}>
-        <Routes key={location.pathname} location={location}>
-          <Route path={"/"} exact element={<Gallery />} />
-          <Route
-            path={"/:id"}
-            element={
-              <AnimatedComponent>
-                <CharacterInfo />
-              </AnimatedComponent>
-            }
-          />
-          <Route path="dummy" element={<DummyComponent />} />
-        </Routes>
-      </AnimatePresence>
+      <Box
+        sx={{
+          display: `flex`,
+          // padding: `1rem`,
+        }}
+      >
+        <AnimatePresence mode={`wait`}>
+          <Routes key={location.pathname} location={location}>
+            <Route path={"/"} exact element={<Gallery />} />
+            <Route
+              path={"/:id"}
+              element={
+                <AnimatedComponent>
+                  <CharacterInfo />
+                </AnimatedComponent>
+              }
+            />
+            <Route path="dummy" element={<DummyComponent />} />
+          </Routes>
+        </AnimatePresence>
+      </Box>
       {/* <Gallery /> */}
     </Container>
   );
