@@ -22,6 +22,7 @@ const CharacterCard = (props) => {
         margin: `2rem`,
         borderRadius: `1rem`,
         backgroundColor: `whitesmoke`,
+        background: `linear-gradient(to bottom right, #ffffff, #808080)`,
       }}
     >
       <CardMedia

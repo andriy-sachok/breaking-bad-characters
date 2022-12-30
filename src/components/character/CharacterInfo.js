@@ -19,6 +19,7 @@ const CharacterInfo = () => {
           margin: `2rem auto`,
           borderRadius: `1rem`,
           backgroundColor: `whitesmoke`,
+          background: `linear-gradient(to bottom right, #ffffff, #a6a6a6)`,
         }}
       >
         <CardMedia component="img" src={character.photoURL} />

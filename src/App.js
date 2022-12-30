@@ -13,7 +13,6 @@ import DummyComponent from "./components/animations/DummyComponent";
 
 function App() {
   const location = useLocation();
-  console.log(location);
   return (
     <Container maxWidth="false" disableGutters>
       <Header />
