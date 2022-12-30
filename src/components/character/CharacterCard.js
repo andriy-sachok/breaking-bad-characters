@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 
+import { grey } from "@mui/material/colors";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -35,7 +36,9 @@ const CharacterCard = ({ id, photo, name }) => {
             navigate(`/${id}`);
           }}
           sx={{
-            background: `linear-gradient(to bottom right, #ffffff, #808080)`,
+            background: `linear-gradient(to bottom right, ${grey[`A100`]}, ${
+              grey[600]
+            })`,
             borderRadius: `1rem`,
           }}
         >
@@ -46,7 +49,7 @@ const CharacterCard = ({ id, photo, name }) => {
             sx={{ width: "350px", height: `260px` }}
           />
           <CardContent>
-            <Typography variant="h5" textAlign={`center`}>
+            <Typography variant="h5" textAlign={`center`} fontWeight={`bold`}>
               {name}
             </Typography>
           </CardContent>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { characters } from "../../constants";
+import { grey } from "@mui/material/colors";
 
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -24,7 +25,9 @@ const CharacterInfo = () => {
     <CharacterWrapper elevation={8}>
       <Card
         sx={{
-          background: `linear-gradient(to bottom right, #ffffff, #a6a6a6)`,
+          background: `linear-gradient(to bottom right, ${grey[`A100`]}, ${
+            grey[600]
+          })`,
           borderRadius: `1.5rem`,
         }}
       >
@@ -40,7 +43,11 @@ const CharacterInfo = () => {
           <Typography variant={`h5`} textAlign={`center`} fontWeight={`bold`}>
             {character.fullName}
           </Typography>
-          <Typography variant={`body1`} textAlign={`start`}>
+          <Typography
+            variant={`body1`}
+            textAlign={`start`}
+            sx={{ margin: `0.5rem 0` }}
+          >
             {character.description}
           </Typography>
           <Button
