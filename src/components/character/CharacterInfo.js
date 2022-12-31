@@ -31,7 +31,7 @@ const CharacterInfo = () => {
           borderRadius: `1.5rem`,
         }}
       >
-        <CardMedia component="img" src={character.photoURL} />
+        <CardMedia component="img" src={character.photoURL[0]} />
         <CardContent
           sx={{
             display: `flex`,

@@ -49,7 +49,7 @@ const Gallery = () => {
             <Grid item md={5}>
               <CharacterCard
                 id={hero.id}
-                photo={hero.photoURL}
+                photoURL={hero.photoURL}
                 name={hero.name}
                 fullName={hero.fullName}
                 description={hero.description}
