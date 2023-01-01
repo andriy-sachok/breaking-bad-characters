@@ -11,7 +11,6 @@ import AnimatedComponent from "./components/animations/AnimatedComponent";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
 import CharacterInfo from "./components/character/CharacterInfo";
-import DummyComponent from "./components/animations/DummyComponent";
 
 const theme = createTheme({
   palette: {
@@ -35,12 +34,16 @@ function App() {
       <Container
         maxWidth="false"
         disableGutters
-        sx={{ backgroundColor: `secondary.main` }}
+        sx={{
+          backgroundColor: `secondary.main`,
+        }}
       >
         <Header />
         <Box
           sx={{
             display: `flex`,
+            justifyContent: `center`,
+            alignItems: `center`,
           }}
         >
           <AnimatePresence mode={`wait`}>
@@ -54,7 +57,6 @@ function App() {
                   </AnimatedComponent>
                 }
               />
-              <Route path="dummy" element={<DummyComponent />} />
             </Routes>
           </AnimatePresence>
         </Box>

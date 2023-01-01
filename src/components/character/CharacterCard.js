@@ -12,7 +12,7 @@ import { styled, Paper } from "@mui/material";
 
 const CardWrapper = styled(Paper)({
   borderRadius: `1rem`,
-  margin: `2rem`,
+  margin: `1rem`,
 });
 
 const scaleAnimtaion = {
