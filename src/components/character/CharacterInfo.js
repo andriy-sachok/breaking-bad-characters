@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { characters } from "../../constants";
 import { grey } from "@mui/material/colors";
@@ -24,9 +24,30 @@ const iconArrowConfig = {
 };
 
 const CharacterInfo = () => {
+  const [photoIndex, setPhotoIndex] = useState(0);
   let { id } = useParams();
   const navigate = useNavigate();
   const character = characters.find((hero) => hero.id === id);
+
+  const showPrevPhoto = () => {
+    setPhotoIndex((index) => {
+      --index;
+      if (index < 0) {
+        return character.photoURL.length - 1;
+      }
+      return index;
+    });
+  };
+
+  const showNextPhoto = () => {
+    setPhotoIndex((index) => {
+      ++index;
+      if (index === character.photoURL.length) {
+        return 0;
+      }
+      return index;
+    });
+  };
 
   return (
     <CharacterWrapper elevation={8}>
@@ -45,13 +66,13 @@ const CharacterInfo = () => {
             alignItems: `center`,
             justifyContent: `space-between`,
             height: `700px`,
-            backgroundImage: `url('${character.photoURL[2]}')`,
+            backgroundImage: `url('${character.photoURL[photoIndex]}')`,
           }}
         >
-          <IconButton>
+          <IconButton onClick={showPrevPhoto}>
             <ArrowBackIcon sx={iconArrowConfig} />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={showNextPhoto}>
             <ArrowForwardIcon sx={iconArrowConfig} />
           </IconButton>
         </CardMedia>
