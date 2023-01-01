@@ -20,7 +20,7 @@ const scaleAnimtaion = {
   exit: { scale: 1 },
 };
 
-const CharacterCard = ({ id, photo, name }) => {
+const CharacterCard = ({ id, photoURL, name }) => {
   const navigate = useNavigate();
 
   return (
@@ -44,7 +44,7 @@ const CharacterCard = ({ id, photo, name }) => {
         >
           <CardMedia
             component="img"
-            src={photo}
+            src={photoURL[0]}
             alt={name}
             sx={{ width: "350px", height: `260px` }}
           />
