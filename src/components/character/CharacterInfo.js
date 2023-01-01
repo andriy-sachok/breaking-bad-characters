@@ -18,8 +18,14 @@ const CharacterWrapper = styled(Paper)({
   margin: `2rem auto`,
 });
 
+const iconButtonConfig = {
+  color: grey[600],
+  "&:hover": {
+    color: grey[200],
+  },
+};
 const iconArrowConfig = {
-  color: `white`,
+  // color: `white`,
   fontSize: 40,
 };
 
@@ -69,11 +75,11 @@ const CharacterInfo = () => {
             backgroundImage: `url('${character.photoURL[photoIndex]}')`,
           }}
         >
-          <IconButton onClick={showPrevPhoto}>
-            <ArrowBackIcon sx={iconArrowConfig} />
+          <IconButton onClick={showPrevPhoto} sx={iconButtonConfig}>
+            <ArrowBackIcon sx={{ fontSize: 40 }} />
           </IconButton>
-          <IconButton onClick={showNextPhoto}>
-            <ArrowForwardIcon sx={iconArrowConfig} />
+          <IconButton onClick={showNextPhoto} sx={iconButtonConfig}>
+            <ArrowForwardIcon sx={{ fontSize: 40 }} />
           </IconButton>
         </CardMedia>
 
