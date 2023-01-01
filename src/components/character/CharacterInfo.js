@@ -7,16 +7,10 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { styled, Paper } from "@mui/material";
+import { Paper } from "@mui/material";
 import { Button, IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
-const CharacterWrapper = styled(Paper)({
-  borderRadius: `1.5rem`,
-  width: `70%`,
-  margin: `2rem auto`,
-});
 
 const iconButtonConfig = {
   color: grey[600],
@@ -24,10 +18,8 @@ const iconButtonConfig = {
     color: grey[200],
   },
 };
-const iconArrowConfig = {
-  // color: `white`,
-  fontSize: 40,
-};
+
+// FIXME: Strange color at the bottom of page while in SM breakpoint mode
 
 const CharacterInfo = () => {
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -56,9 +48,24 @@ const CharacterInfo = () => {
   };
 
   return (
-    <CharacterWrapper elevation={8}>
+    <Paper
+      elevation={8}
+      sx={{
+        borderRadius: `1.5rem`,
+        margin: `2rem`,
+        width: {
+          xs: `350px`,
+          sm: `550px`,
+          md: `850px`,
+          lg: `1100px`,
+          // xl: `1300px`,
+        },
+      }}
+    >
       <Card
         sx={{
+          width: `inherit`,
+          // height: `inherit`,
           background: `linear-gradient(to bottom right, ${grey[`A100`]}, ${
             grey[600]
           })`,
@@ -71,7 +78,13 @@ const CharacterInfo = () => {
             display: `flex`,
             alignItems: `center`,
             justifyContent: `space-between`,
-            height: `700px`,
+            height: {
+              xs: `250px`,
+              sm: `400px`,
+              md: `600px`,
+              lg: `800px`,
+              // xl: `1200px`,
+            },
             backgroundImage: `url('${character.photoURL[photoIndex]}')`,
           }}
         >
@@ -117,7 +130,7 @@ const CharacterInfo = () => {
           </Button>
         </CardContent>
       </Card>
-    </CharacterWrapper>
+    </Paper>
   );
 };
 
