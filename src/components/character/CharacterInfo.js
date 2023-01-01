@@ -8,13 +8,20 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { styled, Paper } from "@mui/material";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const CharacterWrapper = styled(Paper)({
   borderRadius: `1.5rem`,
   width: `70%`,
   margin: `2rem auto`,
 });
+
+const iconArrowConfig = {
+  color: `white`,
+  fontSize: 40,
+};
 
 const CharacterInfo = () => {
   let { id } = useParams();
@@ -31,7 +38,24 @@ const CharacterInfo = () => {
           borderRadius: `1.5rem`,
         }}
       >
-        <CardMedia component="img" src={character.photoURL[0]} />
+        <CardMedia
+          component="div"
+          sx={{
+            display: `flex`,
+            alignItems: `center`,
+            justifyContent: `space-between`,
+            height: `700px`,
+            backgroundImage: `url('${character.photoURL[2]}')`,
+          }}
+        >
+          <IconButton>
+            <ArrowBackIcon sx={iconArrowConfig} />
+          </IconButton>
+          <IconButton>
+            <ArrowForwardIcon sx={iconArrowConfig} />
+          </IconButton>
+        </CardMedia>
+
         <CardContent
           sx={{
             display: `flex`,
