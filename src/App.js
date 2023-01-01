@@ -35,12 +35,16 @@ function App() {
       <Container
         maxWidth="false"
         disableGutters
-        sx={{ backgroundColor: `secondary.main` }}
+        sx={{
+          backgroundColor: `secondary.main`,
+        }}
       >
         <Header />
         <Box
           sx={{
             display: `flex`,
+            justifyContent: `center`,
+            alignItems: `center`,
           }}
         >
           <AnimatePresence mode={`wait`}>
