@@ -1,6 +1,5 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Typography from "@mui/material/Typography";
+import { AppBar, Typography } from "@mui/material";
 
 const Header = () => {
   return (

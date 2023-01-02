@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { characters } from "../../constants";
 import { grey } from "@mui/material/colors";
-
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { Paper } from "@mui/material";
-import { Button, IconButton } from "@mui/material";
+import {
+  Paper,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Button,
+  IconButton,
+} from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { characters } from "../../constants";
 
 const iconButtonConfig = {
   color: grey[600],
@@ -18,8 +20,6 @@ const iconButtonConfig = {
     color: grey[200],
   },
 };
-
-// FIXME: Strange color at the bottom of page while in SM breakpoint mode
 
 const CharacterInfo = () => {
   const [photoIndex, setPhotoIndex] = useState(0);
@@ -65,7 +65,6 @@ const CharacterInfo = () => {
       <Card
         sx={{
           width: `inherit`,
-          // height: `inherit`,
           background: `linear-gradient(to bottom right, ${grey[`A100`]}, ${
             grey[600]
           })`,

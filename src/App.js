@@ -1,15 +1,11 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-
-import { Box, Container } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material";
-import { grey, blueGrey } from "@mui/material/colors";
-
 import { AnimatePresence } from "framer-motion";
-import AnimatedComponent from "./components/animations/AnimatedComponent";
-
+import { createTheme, ThemeProvider, Box, Container } from "@mui/material";
+import { grey, blueGrey } from "@mui/material/colors";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
+import AnimatedComponent from "./components/animations/AnimatedComponent";
 import CharacterInfo from "./components/character/CharacterInfo";
 
 const theme = createTheme({
@@ -20,10 +16,6 @@ const theme = createTheme({
     secondary: {
       main: blueGrey[100],
     },
-    // backgroundColor: {
-    //   header:
-    // },
-    // text: {},
   },
 });
 
@@ -35,15 +27,17 @@ function App() {
         maxWidth="false"
         disableGutters
         sx={{
-          backgroundColor: `secondary.main`,
+          height: `100%`,
         }}
       >
         <Header />
         <Box
           sx={{
             display: `flex`,
+            height: `100%`,
             justifyContent: `center`,
             alignItems: `center`,
+            padding: `1.5rem`,
           }}
         >
           <AnimatePresence mode={`wait`}>

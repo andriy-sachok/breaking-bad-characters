@@ -1,14 +1,15 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-
-import { grey } from "@mui/material/colors";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
 import { motion } from "framer-motion";
-
-import { styled, Paper } from "@mui/material";
+import { grey } from "@mui/material/colors";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  styled,
+  Paper,
+} from "@mui/material";
 
 const CardWrapper = styled(Paper)({
   borderRadius: `1rem`,
