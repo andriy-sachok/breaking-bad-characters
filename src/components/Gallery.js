@@ -1,10 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-import Grid from "@mui/material/Grid";
-
 import CharacterCard from "./character/CharacterCard";
-
 import { characters } from "../constants";
 
 const gallery = {
@@ -46,15 +42,13 @@ const Gallery = () => {
       >
         {charactersList.map((hero) => (
           <motion.div variants={galleyrItem} key={hero.fullName}>
-            <Grid item md={5}>
-              <CharacterCard
-                id={hero.id}
-                photo={hero.photoURL}
-                name={hero.name}
-                fullName={hero.fullName}
-                description={hero.description}
-              ></CharacterCard>
-            </Grid>
+            <CharacterCard
+              id={hero.id}
+              photoURL={hero.photoURL}
+              name={hero.name}
+              fullName={hero.fullName}
+              description={hero.description}
+            ></CharacterCard>
           </motion.div>
         ))}
       </motion.div>
