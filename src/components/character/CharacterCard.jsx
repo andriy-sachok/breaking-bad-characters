@@ -1,7 +1,7 @@
-import * as React from "react";
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import { grey } from "@mui/material/colors";
+import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { grey } from '@mui/material/colors';
 import {
   Card,
   CardMedia,
@@ -9,11 +9,12 @@ import {
   Typography,
   styled,
   Paper,
-} from "@mui/material";
+} from '@mui/material';
 
 const CardWrapper = styled(Paper)({
   borderRadius: `1rem`,
   margin: `1rem`,
+  cursor: `pointer`,
 });
 
 const scaleAnimtaion = {
@@ -47,7 +48,7 @@ const CharacterCard = ({ id, photoURL, name }) => {
             component="img"
             src={photoURL[0]}
             alt={name}
-            sx={{ width: "350px", height: `260px` }}
+            sx={{ width: '350px', height: `260px` }}
           />
           <CardContent>
             <Typography variant="h5" textAlign={`center`} fontWeight={`bold`}>
