@@ -1,7 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
-import CharacterCard from "./character/CharacterCard";
-import { characters } from "../constants";
+import React from 'react';
+import { motion } from 'framer-motion';
+import CharacterCard from './character/CharacterCard';
+import { characters } from '../constants';
 
 const gallery = {
   hidden: {},
