@@ -1,23 +1,8 @@
-import React from "react";
-import { motion } from "framer-motion";
-import CharacterCard from "./character/CharacterCard";
-import { characters } from "../constants";
-
-const gallery = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const galleyrItem = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-  },
-};
+import React from 'react';
+import { motion } from 'framer-motion';
+import CharacterCard from './character/CharacterCard';
+import { characters } from '../constants';
+import { galleryAnimation, galleyrItemAnimation } from '../animations';
 
 const Gallery = () => {
   const charactersList = characters.map((hero) => ({
@@ -31,7 +16,7 @@ const Gallery = () => {
   return (
     <>
       <motion.div
-        variants={gallery}
+        variants={galleryAnimation}
         initial="hidden"
         animate="visible"
         style={{
@@ -41,7 +26,7 @@ const Gallery = () => {
         }}
       >
         {charactersList.map((hero) => (
-          <motion.div variants={galleyrItem} key={hero.fullName}>
+          <motion.div variants={galleyrItemAnimation} key={hero.fullName}>
             <CharacterCard
               id={hero.id}
               photoURL={hero.photoURL}
