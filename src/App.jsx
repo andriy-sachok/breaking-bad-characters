@@ -1,12 +1,12 @@
-import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import { createTheme, ThemeProvider, Box, Container } from "@mui/material";
-import { grey, blueGrey } from "@mui/material/colors";
-import Header from "./components/Header";
-import Gallery from "./components/Gallery";
-import AnimatedComponent from "./components/animations/AnimatedComponent";
-import CharacterInfo from "./components/character/CharacterInfo";
+import React from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import { createTheme, ThemeProvider, Box, Container } from '@mui/material';
+import { grey, blueGrey } from '@mui/material/colors';
+import Header from './components/Header';
+import Gallery from './components/Gallery';
+import CharacterInfo from './components/character/CharacterInfo';
+import { characterInfoAnimation } from './animations';
 
 const theme = createTheme({
   palette: {
@@ -42,13 +42,19 @@ function App() {
         >
           <AnimatePresence mode={`wait`}>
             <Routes key={location.pathname} location={location}>
-              <Route path={"/"} exact element={<Gallery />} />
+              <Route path={'/'} exact element={<Gallery />} />
               <Route
-                path={"/:id"}
+                path={'/:id'}
                 element={
-                  <AnimatedComponent>
+                  <motion.div
+                    variants={characterInfoAnimation}
+                    initial={`initial`}
+                    animate={`animate`}
+                    exit={`exit`}
+                    transition={{ duration: 0.5 }}
+                  >
                     <CharacterInfo />
-                  </AnimatedComponent>
+                  </motion.div>
                 }
               />
             </Routes>

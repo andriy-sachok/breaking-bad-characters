@@ -11,17 +11,10 @@ import {
   Paper,
 } from '@mui/material';
 
-const scaleAnimtaion = {
-  hover: { scale: 1.05 },
-  exit: { scale: 1 },
-};
-
-const scaleAndRollAnimation = {
-  disappearing: {
-    scale: 0,
-    rotate: '45deg',
-  },
-};
+import {
+  appearCharacterCardAnimation,
+  disappearCharacterCardAnimation,
+} from './../../animations.js';
 
 const CardWrapper = styled(Paper)({
   borderRadius: `1rem`,
@@ -35,13 +28,13 @@ const CharacterCard = ({ id, photoURL, name }) => {
 
   return (
     <motion.div
-      variants={scaleAndRollAnimation}
+      variants={disappearCharacterCardAnimation}
       animate={isShow ? `` : `disappearing`}
       transition={{ duration: 0.3 }}
     >
       <CardWrapper elevation={4}>
         <motion.div
-          variants={scaleAnimtaion}
+          variants={appearCharacterCardAnimation}
           whileHover={`hover`}
           exit={`exit`}
           transition={{ duration: 0.3 }}
