@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { grey } from "@mui/material/colors";
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { grey } from '@mui/material/colors';
 import {
   Paper,
   Card,
@@ -9,14 +9,14 @@ import {
   Typography,
   Button,
   IconButton,
-} from "@mui/material";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { characters } from "../../constants";
+} from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { characters } from '../../constants';
 
 const iconButtonConfig = {
   color: grey[600],
-  "&:hover": {
+  '&:hover': {
     color: grey[200],
   },
 };
@@ -100,7 +100,7 @@ const CharacterInfo = () => {
             display: `flex`,
             flexDirection: `column`,
             alignItems: `center`,
-            justifyContent: "center",
+            justifyContent: 'center',
           }}
         >
           <Typography variant={`h5`} textAlign={`center`} fontWeight={`bold`}>
@@ -117,7 +117,7 @@ const CharacterInfo = () => {
             fullWidth={false}
             disableRipple
             variant={`text`}
-            onClick={() => navigate("/")}
+            onClick={() => navigate(-1)}
           >
             <Typography
               variant={`button`}

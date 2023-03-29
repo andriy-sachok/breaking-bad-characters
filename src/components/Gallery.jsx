@@ -2,7 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import CharacterCard from './character/CharacterCard';
 import { characters } from '../constants';
-import { galleryAnimation, galleyrItemAnimation } from '../animations';
+import {
+  galleryAnimation,
+  galleyrItemAnimation,
+  characterInfoAnimation,
+} from '../animations';
+import { Routes, Route } from 'react-router-dom';
+import CharacterInfo from './character/CharacterInfo';
 
 const Gallery = () => {
   const charactersList = characters.map((hero) => ({
@@ -13,8 +19,8 @@ const Gallery = () => {
     description: hero.description,
   }));
 
-  return (
-    <>
+  const GalleryRoute = () => {
+    return (
       <motion.div
         variants={galleryAnimation}
         initial="hidden"
@@ -33,11 +39,31 @@ const Gallery = () => {
               name={hero.name}
               fullName={hero.fullName}
               description={hero.description}
-            ></CharacterCard>
+            />
           </motion.div>
         ))}
       </motion.div>
-    </>
+    );
+  };
+
+  const CharacterInfoRoute = () => {
+    return (
+      <motion.div
+        variants={characterInfoAnimation}
+        initial={`initial`}
+        animate={`animate`}
+        exit={`exit`}
+        transition={{ duration: 0.5 }}
+      >
+        <CharacterInfo />
+      </motion.div>
+    );
+  };
+  return (
+    <Routes>
+      <Route path="/" exact element={<GalleryRoute />} />
+      <Route path="/:id" element={<CharacterInfoRoute />} />
+    </Routes>
   );
 };
 

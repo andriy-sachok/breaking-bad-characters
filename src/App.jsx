@@ -1,12 +1,10 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { createTheme, ThemeProvider, Box, Container } from '@mui/material';
 import { grey, blueGrey } from '@mui/material/colors';
 import Header from './components/Header';
 import Gallery from './components/Gallery';
-import CharacterInfo from './components/character/CharacterInfo';
-import { characterInfoAnimation } from './animations';
 
 const theme = createTheme({
   palette: {
@@ -42,21 +40,9 @@ function App() {
         >
           <AnimatePresence mode={`wait`}>
             <Routes key={location.pathname} location={location}>
-              <Route path={'/'} exact element={<Gallery />} />
-              <Route
-                path={'/:id'}
-                element={
-                  <motion.div
-                    variants={characterInfoAnimation}
-                    initial={`initial`}
-                    animate={`animate`}
-                    exit={`exit`}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <CharacterInfo />
-                  </motion.div>
-                }
-              />
+              <Route path="/" exact element={<Navigate to="characters" />} />
+              <Route path="/characters/*" element={<Gallery />} />
+              <Route path="/*" element={<h1>Page 404</h1>} />
             </Routes>
           </AnimatePresence>
         </Box>

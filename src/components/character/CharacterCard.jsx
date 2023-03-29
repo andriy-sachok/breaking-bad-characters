@@ -41,7 +41,7 @@ const CharacterCard = ({ id, photoURL, name }) => {
         >
           <Card
             onClick={() => {
-              navigate(`/${id}`);
+              navigate(`${id}`);
               setIsShow((prevState) => !prevState);
             }}
             sx={{
